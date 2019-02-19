@@ -1,0 +1,32 @@
+The bridge pattern is a structural design pattern. In the bridge pattern, we separate an abstraction and its implementation and develop separate inheritance structures for both the abstraction and the implementer. The abstraction is an interface or abstract class, and the implementer is likewise an interface or abstract class. The abstraction contains a reference to the implementer. Children of the abstraction are referred to as refined abstractions, and children of the implementer are concrete implementers. Since we can change the reference to the implementer in the abstraction, we are able to change the abstraction’s implementor at run-time. Changes to the implementer do not affect client code.
+
+When To Use Bridge Pattern
+You want to hide implementation details (changes) from clients.
+Selection or switching of implementation is at run-time rather than design time.
+Abstraction and implementation should both be extensible by subclassing.
+You want to share an implementation among multiple objects and this should be hidden from the client.
+
+Advantages of Bridge Design Pattern:
+
+Decoupling abstraction from implementation – Inheritance tightly couples an abstraction with an implementation at compile time. Bridge pattern can be used to avoid the binding between abstraction and implementation and to select the implementation at run time.
+
+Reduction in the number of sub classes – Sometimes, using pure inheritance will increase the number of sub-classes.
+Cleaner code and Reduction in executable size
+Interface and implementation can be varied independently – Maintaining two different class hierarchies for interface and implementation entitles to vary one independent of the other.
+
+Improved Extensibility – Abstraction and implementation can be extended independently.
+Loosely coupled client code – Abstraction separates the client code from the implementation. So, the implementation can be changed without affecting the client code and the client code need not be compiled when the implementation changes.
+
+Drawbacks in using Bridge Pattern:
+Increases complexity.
+Double indirection – This will have a slight impact on performance. The abstraction needs to pass messages along to the implementator for the operation to get executed.
+
+Comparison with Similar design Patterns
+
+Adapter makes things work after they’re designed; Bridge makes them work before they are.
+Bridge is designed up-front to let the abstraction and the implementation vary independently. Adapter is retrofitted to make unrelated classes work together.
+State, Strategy, Bridge (and to some degree Adapter) have similar solution structures. They all share elements of the “handle/body” idiom. They differ in intent – that is, they solve different problems.
+The structure of State and Bridge are identical (except that Bridge admits hierarchies of envelope classes, whereas State allows only one). The two patterns use the same structure to solve different problems: State allows an object’s behavior to change along with its state, while Bridge’s intent is to decouple an abstraction from its implementation so that the two can vary independently.
+If interface classes delegate the creation of their implementation classes (instead of creating/coupling themselves directly), then the design usually uses the Abstract Factory pattern to create the implementation objects.
+
+Reference URL - https://javarevealed.wordpress.com/
